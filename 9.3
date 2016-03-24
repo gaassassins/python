@@ -1,0 +1,22 @@
+Даны два числа n и m. Создайте двумерный массив размером n×m и заполните его символами "." и "*" в шахматном порядке. 
+В левом верхнем углу должна стоять точка.
+
+import math
+n, m  = [int(i) for i in input().split()]
+
+a = [['.'] * m for i in range(n)]
+k = int(n/2)
+l = int(m/2)
+for i in range(0, math.ceil(n/2)):
+    for j in range(0,int(m/2)):
+       a[i*2][j*2 + 1] = '*'
+ 
+for i in range(0, int(n/2)):
+    for j in range(0,math.ceil(m/2)):
+       a[i*2+1][j*2 ] = '*'
+
+for  i in range(n):
+    for j in range(m):
+        print(a[i][j], end  = ' ')
+    print()
+
