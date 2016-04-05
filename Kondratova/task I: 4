@@ -1,0 +1,21 @@
+import math
+def fsin(x, n):
+    if n > 0:
+        return 2 * fsin (x, n - 1) * math.cos(x) - fsin(x, n - 2)
+    else:
+        return math.sin(n * x)
+        
+def fcos(x,n):
+    if n > 0:
+        return 2 * fcos(x, n - 1) * math.cos(x) - fcos(x, n - 2)
+    else:
+        return math.cos(n * x)
+
+x = float(input())
+n = int(input())
+l = fsin(x,n)
+k = fcos(x,n)
+res = l/k
+print(res)
+print(l)
+print(k)
