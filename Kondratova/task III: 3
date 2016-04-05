@@ -1,0 +1,11 @@
+def func(x,n):
+        if n == 0:
+            return 1
+        elif n == 1 :
+            return 2 * x
+        else:
+            return (2 * x * f(x, n - 1) - 2 * (n - 1) * f(x, n - 2))
+
+x = float(input())
+n = int(input())
+print(func(x, n))
